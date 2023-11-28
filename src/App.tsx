@@ -1,4 +1,4 @@
-import NeoGrid from './components/Grid';
+import NeoGrid from './components/Grid'; 
 
 const App = () => {
   return (

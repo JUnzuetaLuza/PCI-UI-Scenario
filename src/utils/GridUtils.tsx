@@ -3,7 +3,7 @@ import { ColDef } from "ag-grid-community";
 export const defaultColDef = { 
   sortable: true,
   filter: 'agNumberColumnFilter',
-}
+} 
 
 export const columnDefs: ColDef[] = [
   { field: "designation", filter: 'agTextColumnFilter', headerName: "Designation" },

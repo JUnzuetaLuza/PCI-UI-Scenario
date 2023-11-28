@@ -6,7 +6,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { useRef } from "react";
 import { defaultColDef, columnDefs } from "../utils/GridUtils";
-import "../styles/Grid.css";
+import "../styles/Grid.css"; 
 
 const NeoGrid = (): JSX.Element => {
   const refGrid = useRef<AgGridReact>(null);
