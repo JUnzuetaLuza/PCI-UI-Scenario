@@ -1,0 +1,13 @@
+.topGrid {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+}
+
+.title {
+    font-weight: 800;
+}
+.clearFiltSort {
+    padding: 0.5rem;
+}
