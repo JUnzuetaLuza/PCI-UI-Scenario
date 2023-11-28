@@ -4,17 +4,22 @@ import data from "./near-earth-asteroids.json";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
+const defaultColDef = { 
+  sortable: true,
+  filter: 'agNumberColumnFilter',
+}
+
 const columnDefs: ColDef[] = [
-  { field: "designation", headerName: "Designation" },
-  { field: "discovery_date", headerName: "Discovery Date" },
+  { field: "designation", filter: 'agTextColumnFilter', headerName: "Designation" },
+  { field: "discovery_date", filter: 'agDateColumnFilter', headerName: "Discovery Date", },
   { field: "h_mag", headerName: "H (mag)" },
   { field: "moid_au", headerName: "MOID (au)" },
   { field: "q_au_1", headerName: "q (au)" },
   { field: "q_au_2", headerName: "Q (au)" },
   { field: "period_yr", headerName: "Period (yr)" },
   { field: "i_deg", headerName: "Inclination (deg)" },
-  { field: "pha", headerName: "Potentially Hazardous" },
-  { field: "orbit_class", headerName: "Orbit Class", enableRowGroup: true, },
+  { field: "pha", filter: 'agTextColumnFilter', headerName: "Potentially Hazardous",sortable: false },
+  { field: "orbit_class", filter: 'agTextColumnFilter', headerName: "Orbit Class", enableRowGroup: true, },
 ];
 
 const NeoGrid = (): JSX.Element => {
@@ -23,6 +28,7 @@ const NeoGrid = (): JSX.Element => {
       <h1 className="title">Near-Earth Object Overview</h1>
       <AgGridReact
         rowData={data}
+        defaultColDef={defaultColDef}
         columnDefs={columnDefs}
         rowGroupPanelShow={'always'}
       />
