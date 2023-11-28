@@ -27,7 +27,14 @@ const columnDefs: ColDef[] = [
   { field: "q_au_2", headerName: "Q (au)" },
   { field: "period_yr", headerName: "Period (yr)" },
   { field: "i_deg", headerName: "Inclination (deg)" },
-  { field: "pha", filter: 'agTextColumnFilter', headerName: "Potentially Hazardous",sortable: false },
+  { field: "pha", filter: 'agTextColumnFilter', headerName: "Potentially Hazardous",sortable: false,
+    valueFormatter: (data) => {
+      const newPha = data.value === 'Y' ? 'Yes' 
+      : data.value === 'N' ? 'No' 
+      : data.value === 'n/a' ? '' 
+      : data.value;
+      return newPha;
+    }},
   { field: "orbit_class", filter: 'agTextColumnFilter', headerName: "Orbit Class", enableRowGroup: true, },
 ];
 
