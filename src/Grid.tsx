@@ -47,6 +47,7 @@ const NeoGrid = (): JSX.Element => {
         defaultColDef={defaultColDef}
         columnDefs={columnDefs}
         rowGroupPanelShow={'always'}
+        enableRangeSelection={true}
       />
     </div>
   );
